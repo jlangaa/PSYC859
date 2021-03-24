@@ -25,8 +25,12 @@
 #' direction = "<")
 #' aucs(single)
 
-#3/19/21 - WJ - Attempt to Fix Issue #5 re direction default - https://github.com/jlangaa/bouldr/issues/5
+
+
 bouldr <- function(formula, data, levels, direction = "auto", test = "delong", ...) {
+# 3/17/21 - Issue 5 - Remove clunky required arguments from bouldr function call https://github.com/jlangaa/bouldr/issues/5
+#   Added 'auto' to direction parameter per pROC settings: automatically define in which group the median is higher and take the good direction to have an AUC >= 0.5
+
 
   ### Cast data as data.frame
   data <- as.data.frame(data)
